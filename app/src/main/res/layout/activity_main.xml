@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".screen.MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:id="@+id/appBarLayout3"
+            android:background="#FFFFFF"
+            tools:ignore="MissingConstraints">
+
+        <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray"
+                app:popupTheme="@style/CardView.Dark"
+                android:tooltipText="@string/app_name"
+                tools:visibility="visible"
+                />
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <include
+            layout="@layout/content_main"
+            android:layout_height="match_parent"
+            android:id="@+id/include"
+            android:layout_width="match_parent"
+            app:layout_anchorGravity="center"
+            app:layout_anchor="@+id/include"
+            tools:ignore="NotSibling"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="-27dp"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_margin="@dimen/fab_margin"
+            app:srcCompat="@android:drawable/ic_dialog_email"
+            app:backgroundTint="#ED0606"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+            android:layout_width="149dp"
+            android:layout_height="30dp"
+            android:id="@+id/FirstFragment"
+            tools:text="@string/app_name"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_anchorGravity="start"
+            app:layout_anchor="@+id/toolbar"
+            tools:ignore="MissingConstraints,NotSibling"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout3"
+            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.135"/>
+
+    <Button
+            android:text="@string/button_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button"
+            app:layout_anchorGravity="center"
+            app:layout_anchor="@+id/include"
+            android:onClick="pushBtn"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintVertical_bias="0.547"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
