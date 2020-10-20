@@ -16,7 +16,7 @@ interface GithubApiService {
     @GET("search/users")
     fun search(@Query("q") query:String,
                @Query("page") page: Int,
-               @Query("per_page") perPage: Int) :Observable
+               @Query("per_page") perPage: Int) :Observable//<User>?
 
 
     companion object Factory{
